@@ -1,0 +1,6 @@
+/* Provide default values for width/height for the editor */
+
+#aceEditor {
+    height: 200px;
+    width: 500px;
+}

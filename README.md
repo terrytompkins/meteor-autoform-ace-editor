@@ -25,36 +25,30 @@ $ meteor add recreationalcoding:autoform-ace-editor
 
 ## Usage
 
-Specify "ace-editor" for the `type` attribute of any input. This can be done in a number of ways:
+Specify "ace-editor" for the `type` attribute of any input. The editor configuration can be specified through afFieldInput options in the field schema:
 
 In the schema, which will then work with a `quickForm` or `afQuickFields`:
 
 ```js
 {
-  tags: {
-    type: [String],
+  description: {
+    type: String,
+    label: "Description",
     autoform: {
       type: "ace-editor",
       afFieldInput: {
-        multiple: true,
-        aceEditorOptions: {}
-      }
+                      type: "ace-editor",
+                      editorWidth: "600px",
+                      editorHeight: "250px",
+                      theme: "twilight",
+                      mode: "text"
+                    }
     }
   }
 }
 ```
 
-Or on the `afFieldInput` component or any component that passes along attributes to `afFieldInput`:
 
-```js
-{{> afQuickField name="tags" type="ace-editor" multiple=true}}
-
-{{> afFormGroup name="tags" type="ace-editor" multiple=true}}
-
-{{> afFieldInput name="tags" type="ace-editor" multiple=true}}
-```
-
-To provide ace-editor options, set a `aceEditorOptions` attribute equal to a helper that returns the options object. Most of the `data-` attributes that the plugin recognizes should also work.
 
 ## Demo
 
