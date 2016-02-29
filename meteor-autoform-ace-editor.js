@@ -1,22 +1,25 @@
 AutoForm.addInputType("ace-editor", {
     template: "afAceEditor",
     valueIn: function (val, atts) {
-        // todo: this needs to be wired up to load editor content
+        console.log("IN VALUEIN.  INPUT VAL: " + val + ", INIT CONTENT: " + _defaults.initialContent);
+        _defaults.initialContent = val;
         return val;
     },
     valueOut: function () {
         // todo: this needs to be wired to fetch editor content
-        return this.getValue();
+        var editorContent = "";
+        var editor = AceEditor.instance(AutoForm.AceEditor.properties.editorId);
+        if (editor.loaded===true) {
+            editorContent = editor.getValue();
+        }
+        console.log("IN VALUEOUT: " + editorContent);
+        return editorContent;
     }
     // valueConverters: { },
     // contextAdjust: function (context) { return context; }
 });
 
 Template.afAceEditor.helpers({
-    /* ToDo: these are defaults which should come first from autoform properties for the field */
-    editorWidth: function() { return "600px"; },
-    editorHeight: function() { return "400px"; },
-    headerColor: function() { return "purple"; },
     editorId: function() { return AutoForm.AceEditor.properties.editorId; }
 });
 
@@ -48,10 +51,12 @@ AutoForm.AceEditor.setProperties = function (autoformAtts) {
         }
         // console.log("KEY: " + key + ", VALUE: " + AutoForm.AceEditor.properties[key])
     });
+    console.log("IN ACEEDITOR.SETPROPERTIES.  init content: " + _defaults.initialContent);
 };
 
 Template.afAceEditor.onCreated(function() {
     AutoForm.AceEditor.setProperties(this.data.atts);
+    console.log("IN ONCREATED");
 });
 
 
@@ -65,15 +70,18 @@ Template.afAceEditor.onRendered(function () {
         });
         if(editor.loaded===true){
             e.stop();
-            // editor.insert("Initial text here...");
+            editor.insert(AutoForm.AceEditor.properties.initialContent);
         }
     });
     var selector = AutoForm.AceEditor.properties.editorId;
     $("#" + selector).css({"height": AutoForm.AceEditor.properties.editorHeight, "width": AutoForm.AceEditor.properties.editorWidth});
+    console.log("IN ONRENDERED");
 });
 
 Template.afAceEditor.onDestroyed = function () {
+    var editor = AceEditor.instance(AutoForm.AceEditor.properties.editorId);
+    if (editor.loaded===true) {
+        editor.destroy();
+    }
 };
-
-
 
