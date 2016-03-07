@@ -35,7 +35,6 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
     type: String,
     label: "Description",
     autoform: {
-      type: "ace-editor",
       afFieldInput: {
                       type: "ace-editor",
                       editorWidth: "600px",
@@ -49,14 +48,9 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
 ```
 
 
-
-## Demo
-
-[Live](http://autoform.meteor.com/types)
-
 ## Limitations
 
-None
+Unit tests are still pending
 
 ## Contributing
 
@@ -64,4 +58,6 @@ Anyone is welcome to contribute. Fork, make your changes, and then submit a pull
 
 ## See also
 
-
+When I first looked for a similar package, there wasn't one available.  Since creating my own Ace Editor Autoform custom field package I found that there is now another one available.
+It can be found here: [bshamblen:autoform-ace](https://github.com/bshamblen/autoform-ace)
+They function similarly but the options and how they're applied is a bit different.

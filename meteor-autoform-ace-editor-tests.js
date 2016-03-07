@@ -1,5 +1,4 @@
-// Write your tests here!
-// Here is an example.
+// ToDo: Write unit tests here
 Tinytest.add('example', function (test) {
   test.equal(true, true);
 });
