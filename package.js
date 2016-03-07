@@ -1,5 +1,5 @@
 Package.describe({
-    name: 'recreationalcoding:meteor-autoform-ace-editor',
+    name: 'terrytompkins:meteor-autoform-ace-editor',
     version: '0.0.1',
     summary: 'Custom "ace editor" input type for AutoForm',
     git: 'https://github.com/transwebt/meteor-autoform-ace-editor.git',
@@ -24,6 +24,6 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
     api.use('ecmascript');
     api.use('tinytest');
-    api.use('recreationalcoding:meteor-autoform-ace-editor');
+    api.use('terrytompkins:meteor-autoform-ace-editor');
     api.addFiles('meteor-autoform-ace-editor-tests.js');
 });
