@@ -1,5 +1,5 @@
-recreationalcoding:autoform-ace-editor
-======================================
+terrytompkins:autoform-ace-editor
+=================================
 
 An add-on Meteor package for [aldeed:autoform](https://github.com/aldeed/meteor-autoform). Provides a custom input type, "ace-editor", which renders an instance of [ace-editor](https://github.com/ajaxorg/ace).
 
@@ -20,7 +20,7 @@ $ meteor add aldeed:autoform
 In a Meteor app directory, enter:
 
 ```bash
-$ meteor add recreationalcoding:autoform-ace-editor
+$ meteor add terrytompkins:autoform-ace-editor
 ```
 
 ## Usage
