@@ -1,6 +1,6 @@
 Package.describe({
     name: 'terrytompkins:meteor-autoform-ace-editor',
-    version: '0.0.1',
+    version: '0.0.2',
     summary: 'Custom "ace editor" input type for AutoForm',
     git: 'https://github.com/transwebt/meteor-autoform-ace-editor.git',
     // By default, Meteor will default to using README.md for documentation.
@@ -24,6 +24,7 @@ Package.onUse(function (api) {
 Package.onTest(function (api) {
     api.use('ecmascript');
     api.use('tinytest');
+    api.use('test-helpers');
     api.use('terrytompkins:meteor-autoform-ace-editor');
     api.addFiles('meteor-autoform-ace-editor-tests.js');
 });
