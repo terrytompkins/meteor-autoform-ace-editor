@@ -47,6 +47,8 @@ In the schema, which will then work with a `quickForm` or `afQuickFields`:
 }
 ```
 
+An example application that demonstrates the use of this plugin can be found here:
+https://github.com/TransWebT/meteor-autoform-ace-editor-demo
 
 ## Limitations
 
