@@ -6,6 +6,7 @@ AutoForm.addInputType("ace-editor", {
     },
     valueOut: function () {
         var editorContent = "";
+        AutoForm.AceEditor.currentEditorId = this.attr("data-schema-key");
         var editor = AceEditor.instance(AutoForm.AceEditor.currentEditorId);
         if (editor.loaded===true) {
             editorContent = editor.getValue();
